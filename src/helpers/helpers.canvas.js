@@ -146,8 +146,11 @@ export function drawPoint(ctx, options, x, y) {
 	}
 
 	ctx.beginPath();
+	// random cases
+	let choices = ['triangle','rectRounded','rect','star','rectRot','cross','crossRot','arrow','star','line','dash']
+	let cases = (style == 'random') ? choices[ Math.floor(Math.random() * choices.length)] : style
 
-	switch (style) {
+	switch (cases) {
 	// Default includes circle
 	default:
 		ctx.arc(x, y, radius, 0, TAU);
