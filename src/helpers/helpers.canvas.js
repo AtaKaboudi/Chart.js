@@ -232,6 +232,20 @@ export function drawPoint(ctx, options, x, y) {
 		ctx.moveTo(x, y);
 		ctx.lineTo(x + Math.cos(rad) * radius, y + Math.sin(rad) * radius);
 		break;
+	case 'arrow' :
+		xOffset = Math.cos(rad) * radius;
+		yOffset = Math.sin(rad) * radius;
+		let xArrow = xOffset /2 ;
+		let yArrow = radius /2  ;
+
+		ctx.moveTo(x-xOffset, y);
+		ctx.lineTo(x+xOffset,y);
+
+		ctx.moveTo(x +  xArrow ,y - yArrow);
+		ctx.lineTo(x + xOffset ,y );
+		ctx.lineTo(x + xArrow  ,y+  yArrow);
+
+		break;
 	}
 
 	ctx.fill();
